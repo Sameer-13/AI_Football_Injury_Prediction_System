@@ -1,8 +1,10 @@
-# ⚽ Football Injury AI Prediction System
+![WHITELOGO_2025-04-10_15-15-27-removebg-preview](https://github.com/user-attachments/assets/56038766-fa45-4b6a-9af6-2908b6776f92)
+
+# Football Injury AI Prediction System
 
 This project focuses on predicting football player injuries using **pre-match** statistics and, in the future, **in-match** real-time data. It is designed to assist coaches and medical staff in making better, proactive decisions to prevent player injuries.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Project Overview](#-project-overview)
 - [Data Collection Process](#-data-collection-process)
@@ -13,7 +15,7 @@ This project focuses on predicting football player injuries using **pre-match** 
 - [Results & Performance](#-results--performance)
 - [Future Work](#-future-work)
 
-## 🧠 Project Overview
+## Project Overview
 
 Injuries can drastically affect team performance and player health. This AI-driven system uses structured football data from API-Football to anticipate injury risks **before matches** (and eventually **during live games**).
 
@@ -217,7 +219,7 @@ The model achieves strong predictive performance:
 | Modeling (Pre-Match)            | ✅ Completed   |
 | Data Preparation (In-Match)     | 🚧 In Progress |
 | Modeling (In-Match)             | 🚧 In Progress |
-| UI / Dashboard            | 🔧 Planned     |
+| UI / Dashboard            | 🚧 In Progress     |
 
 ## 🔮 Future Work
 
