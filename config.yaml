@@ -1,0 +1,41 @@
+# Configuration settings for the application
+
+# File paths
+paths:
+  data: "data/cleaned_data.csv"
+  logo: "assets/whiteLogo.png"
+
+# Position mapping
+position_map:
+  1: "Goalkeeper"
+  2: "Defender"
+  3: "Midfielder"
+  4: "Forward"
+
+# Column configurations
+display_columns:
+  - player_id
+  - position
+  - prev_player_age
+  - prev_player_height
+  - prev_player_weight
+  - prev_games_appearences
+  - prev_games_minutes
+  - prev_games_rating
+  - injuried
+
+column_rename_map:
+  player_id: "Player ID"
+  position: "Position"
+  prev_player_age: "Age"
+  prev_player_height: "Height (cm)"
+  prev_player_weight: "Weight (kg)"
+  prev_games_appearences: "Appearances"
+  prev_games_minutes: "Minutes Played" 
+  prev_games_rating: "Rating"
+  injuried: "Injury Prediction"
+
+# Styling configurations
+colors:
+  high_risk: "red"
+  low_risk: "green"

@@ -5,3 +5,6 @@ matplotlib
 xgboost
 seaborn
 streamlit
+pyyaml
+pillow
+altair

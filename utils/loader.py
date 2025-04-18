@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from utils.config import DATA_PATH, POSITION_MAP
 
 @st.cache_data
 def load_data():
@@ -11,19 +12,11 @@ def load_data():
     """
     try:
         # Load the dataset
-        df = pd.read_csv(r"C:\Users\smyra\Python Development\AI_Football_Injury_Prevention\data\cleaned_data.csv")
-        
-        # Map position codes to position names
-        position_map = {
-            1: "Goalkeeper",
-            2: "Defender", 
-            3: "Midfielder",
-            4: "Forward",
-        }
+        df = pd.read_csv(DATA_PATH)
         
         # Convert position codes to names
         if 'prev_games_position' in df.columns:
-            df['position'] = df['prev_games_position'].map(position_map)
+            df['position'] = df['prev_games_position'].map(POSITION_MAP)
         else:
             df['position'] = "Not Specified"
         
