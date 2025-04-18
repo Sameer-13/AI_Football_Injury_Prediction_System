@@ -13,7 +13,7 @@ def display_risk_summary(player_display_df):
     low_risk = risk_count.get(0, 0)
     
     # Display summary metrics
-    st.markdown("### Team Risk Summary")
+    st.markdown("### Team Injury Risk Summary")
     col1, col2 = st.columns(2)
     
     with col1:
