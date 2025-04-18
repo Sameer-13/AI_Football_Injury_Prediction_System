@@ -2,16 +2,13 @@ import streamlit as st
 import os
 from PIL import Image
 
-# Import components
 from components.sidebar import display_team_selector
 from components.table import display_player_table
 from components.metric_plane import display_risk_summary
 
-# Import utilities
 from utils.loader import load_data
 from utils.config import LOGO_PATH
 
-# Set page configuration
 st.set_page_config(
     page_title="Football Injury Prediction System",
     page_icon="⚽",
