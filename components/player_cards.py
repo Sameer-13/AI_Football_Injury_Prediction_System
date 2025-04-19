@@ -25,19 +25,26 @@ def display_player_cards(high_risk_players):
                 # Get values with proper formatting
                 player_id = player.get('Player ID', 'Unknown')
                 position = player.get('Position', 'Not Specified')
-                age = format_value(player.get('Age', 'N/A'), 0)
-                rating = format_value(player.get('Rating', 'N/A'), 2)
-                height = format_value(player.get('Height (cm)', 'N/A'), 0)
-                weight = format_value(player.get('Weight (kg)', 'N/A'), 0)
                 
                 # Create a card in this column
                 with cols[j]:
-                    # Use a container for styling
-                    with st.container():
-                        # Player header
-                        st.subheader(f"Player {player_id}")
-                        st.caption(position)
-                    
+                    # Custom styled card using HTML
+                    st.markdown(
+                        f"""
+                        <div style="
+                            background-color: #1E2130;
+                            padding: 20px;
+                            border-radius: 10px;
+                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                            text-align: center;
+                        ">
+                            <h3 style="margin-bottom: 5px;">Player {player_id}</h3>
+                            <p style="color: gray; margin: 0;">{position}</p>
+                        </div>
+                        """,
+                        unsafe_allow_html=True
+                    )
+
                     # Add space between cards
                     st.write("")
         
