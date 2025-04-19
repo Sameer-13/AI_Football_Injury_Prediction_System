@@ -107,8 +107,4 @@ def display_team_selector(df):
         # Match date and time
         st.info("April 20, 2025 • 15:00")
     
-    # Add filters section
-    st.sidebar.markdown("<hr style='margin: 2rem 0; border-color: #333545;'>", unsafe_allow_html=True)
-    st.sidebar.subheader("Filters")
-    
     return selected_team
