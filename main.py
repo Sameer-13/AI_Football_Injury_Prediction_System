@@ -1,4 +1,11 @@
 import streamlit as st
+# Page configuration
+st.set_page_config(
+    page_title="InjurySense.AI",
+    page_icon="⚽",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 import os
 from PIL import Image
 
@@ -24,14 +31,6 @@ from utils.css_styles import (
     get_dashboard_card_start,
     get_dashboard_card_end,
     get_footer
-)
-
-# Page configuration
-st.set_page_config(
-    page_title="InjurySense.AI",
-    page_icon="⚽",
-    layout="wide",
-    initial_sidebar_state="expanded"
 )
 
 # Apply custom theme
@@ -72,9 +71,6 @@ selected_team = display_team_selector(df)
 
 # Filter players by selected team
 team_players = df[df['team_name'] == selected_team].copy()
-
-# Team header with gradient background
-st.markdown(get_section_header(f"Team: {selected_team}"), unsafe_allow_html=True)
 
 # Load player dataframe
 player_df = get_player_df(team_players)

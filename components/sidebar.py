@@ -70,7 +70,7 @@ def display_team_selector(df):
         }
         </style>
         <div style="padding: 0 1rem; margin-bottom: 1rem;">
-            <label style="font-weight: 600; color: #b0b0b0; margin-bottom: 0.5rem; display: block;">Select the opponent team:</label>
+            <label style="font-weight: 600; color: #b0b0b0; margin-bottom: 0.5rem; display: block;">Select opponent team:</label>
         </div>
         """,
         unsafe_allow_html=True
