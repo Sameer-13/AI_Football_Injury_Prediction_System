@@ -23,8 +23,8 @@ def display_player_cards(high_risk_players):
                 player = high_risk_players.iloc[idx]
                 
                 # Get values with proper formatting
-                player_id = player.get('Player ID', 'Unknown')
-                position = player.get('Position', 'Not Specified')
+                player_id = player.get('player_id', 'Unknown')
+                position = player.get('position', 'Not Specified')
                 
                 # Create a card in this column
                 with cols[j]:

@@ -4,6 +4,7 @@
 paths:
   data: "data/cleaned_data.csv"
   logo: "assets/whiteLogo.png"
+  teams: "prematch_inference/teams_2024.csv"
 
 # Position mapping
 position_map:
@@ -15,14 +16,14 @@ position_map:
 # Column configurations
 display_columns:
   - player_id
+  - player_name
+  - age
+  - height_cm
+  - weight_kg
   - position
-  - prev_player_age
-  - prev_player_height
-  - prev_player_weight
-  - prev_games_appearences
-  - prev_games_minutes
-  - prev_games_rating
-  - injuried
+  - inj_probability
+  - ci_lower_95
+  - ci_upper_95
 
 column_rename_map:
   player_id: "Player ID"

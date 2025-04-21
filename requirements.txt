@@ -9,3 +9,6 @@ pyyaml
 pillow
 altair
 plotly
+tqdm
+catboost
+python-dotenv

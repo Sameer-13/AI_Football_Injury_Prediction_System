@@ -1,4 +1,10 @@
 import streamlit as st
+st.set_page_config(
+    page_title="InjurySense.AI",
+    page_icon="⚽",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 import os
 from PIL import Image
 
@@ -8,7 +14,7 @@ from components.metric_plane import display_risk_summary
 from components.player_cards import display_player_cards
 from components.risk_charts import display_risk_charts
 
-from utils.loader import load_data
+from utils.loader import load_data,load_teams_data
 from utils.config import LOGO_PATH
 from utils.html_handler import logo_to_base64
 from utils.df_loader import get_player_df
@@ -27,12 +33,7 @@ from utils.css_styles import (
 )
 
 # Page configuration
-st.set_page_config(
-    page_title="InjurySense.AI",
-    page_icon="⚽",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+
 
 # Apply custom theme
 apply_custom_theme()
@@ -65,19 +66,25 @@ with col1:
 st.markdown(get_gradient_header("Pre-Match Player Injury Prediction Dashboard"), unsafe_allow_html=True)
 
 # Load data
-df = load_data()
+players_df = load_data()
+
+teams_df = load_teams_data()
 
 # Display team selector in sidebar
-selected_team = display_team_selector(df)
-
+selected_team, opponent_team = display_team_selector(teams_df)
+csv_file_name = (
+            f"risk_{selected_team.replace(' ', '_')}"
+            f"_vs_{opponent_team.replace(' ', '_')}.csv"
+        )
+print(csv_file_name)
 # Filter players by selected team
-team_players = df[df['team_name'] == selected_team].copy()
+# team_players = df[df['team_name'] == selected_team].copy()
 
 # Team header with gradient background
 st.markdown(get_section_header(f"Team: {selected_team}"), unsafe_allow_html=True)
 
 # Load player dataframe
-player_df = get_player_df(team_players)
+player_df = get_player_df(players_df)
 
 # Summary cards
 col1, col2 = st.columns([2, 3])
@@ -94,7 +101,7 @@ with col2:
     st.markdown(get_dashboard_card_end(), unsafe_allow_html=True)
 
 # High-risk players spotlight
-    high_risk_players = player_df[player_df['Injury Prediction'] == 1]
+    high_risk_players = player_df[player_df['inj_probability'] > 0.5]
     high_risk_count = len(high_risk_players)
     
 # Display player cards for high-risk players
