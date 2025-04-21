@@ -36,7 +36,6 @@ from utils.css_styles import (
 # Apply custom theme
 apply_custom_theme()
 
-
 # Load CSS styles
 load_general_styles()
 load_metric_styles()
