@@ -32,9 +32,6 @@ from utils.css_styles import (
     get_footer
 )
 
-# Page configuration
-
-
 # Apply custom theme
 apply_custom_theme()
 

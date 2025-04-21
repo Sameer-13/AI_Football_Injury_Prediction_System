@@ -4,7 +4,7 @@
 paths:
   data: "data/cleaned_data.csv"
   logo: "assets/whiteLogo.png"
-  teams: "prematch_inference/teams_2024.csv"
+  teams: "model_inferences/prematch_inference/teams_2024.csv"
 
 # Position mapping
 position_map:
