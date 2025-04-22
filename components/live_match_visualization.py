@@ -176,14 +176,14 @@ def create_trend_visualization(live_data):
             showgrid=True,
             gridcolor='rgba(255,255,255,0.1)',
             tickfont=dict(color="white"),
-            titlefont=dict(color="white")
+            title_font=dict(color="white")  # Changed from titlefont to title_font
         ),
         yaxis=dict(
             title="Risk Ranking",
             showgrid=True,
             gridcolor='rgba(255,255,255,0.1)',
             tickfont=dict(color="white"),
-            titlefont=dict(color="white"),
+            title_font=dict(color="white"),  # Changed from titlefont to title_font
             autorange="reversed",  # Higher rank = lower number (1 is highest risk)
             dtick=1  # Integer ticks for ranks
         ),
