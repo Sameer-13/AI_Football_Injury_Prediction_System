@@ -68,45 +68,45 @@ def display_team_selector(df_teams):
         key="analysis_mode"
     )
     
-    # Add mode description
-    if analysis_mode == "Pre-Match Analysis":
-        st.sidebar.markdown(
-            """
-            <div style="background-color: #2C2F44; border-radius: 10px; padding: 1rem; margin-top: 1rem; font-size: 0.9rem;">
-                <p style="margin: 0; color: #b0b0b0;">
-                    Pre-match analysis provides injury risk predictions based on historical player data, workload, and fixture context.
-                </p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-    else:
-        st.sidebar.markdown(
-            """
-            <div style="background-color: #2C2F44; border-radius: 10px; padding: 1rem; margin-top: 1rem; font-size: 0.9rem;">
-                <p style="margin: 0; color: #b0b0b0;">
-                    In-match analysis provides real-time injury risk monitoring during live matches based on player performance metrics.
-                </p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+    # # Add mode description
+    # if analysis_mode == "Pre-Match Analysis":
+    #     st.sidebar.markdown(
+    #         """
+    #         <div style="background-color: #2C2F44; border-radius: 10px; padding: 1rem; margin-top: 1rem; font-size: 0.9rem;">
+    #             <p style="margin: 0; color: #b0b0b0;">
+    #                 Pre-match analysis provides injury risk predictions based on historical player data, workload, and fixture context.
+    #             </p>
+    #         </div>
+    #         """,
+    #         unsafe_allow_html=True
+    #     )
+    # else:
+    #     st.sidebar.markdown(
+    #         """
+    #         <div style="background-color: #2C2F44; border-radius: 10px; padding: 1rem; margin-top: 1rem; font-size: 0.9rem;">
+    #             <p style="margin: 0; color: #b0b0b0;">
+    #                 In-match analysis provides real-time injury risk monitoring during live matches based on player performance metrics.
+    #             </p>
+    #         </div>
+    #         """,
+    #         unsafe_allow_html=True
+    #     )
     
     # Add additional information for in-match mode
-    if analysis_mode == "In-Match Analysis":
-        st.sidebar.markdown("<hr>", unsafe_allow_html=True)
-        st.sidebar.markdown("<h3 style='text-align: center;'>Live Match Info</h3>", unsafe_allow_html=True)
+    # if analysis_mode == "In-Match Analysis":
+    #     st.sidebar.markdown("<hr>", unsafe_allow_html=True)
+    #     st.sidebar.markdown("<h3 style='text-align: center;'>Live Match Info</h3>", unsafe_allow_html=True)
         
-        # Show mock data option for demonstration purposes
-        st.sidebar.markdown(
-            """
-            <div style="background-color: #2C2F44; border-radius: 10px; padding: 1rem; margin-top: 1rem; font-size: 0.9rem;">
-                <p style="margin: 0; color: #b0b0b0;">
-                    If no live match is in progress, you can view a demonstration with simulated data.
-                </p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+    #     # Show mock data option for demonstration purposes
+    #     st.sidebar.markdown(
+    #         """
+    #         <div style="background-color: #2C2F44; border-radius: 10px; padding: 1rem; margin-top: 1rem; font-size: 0.9rem;">
+    #             <p style="margin: 0; color: #b0b0b0;">
+    #                 If no live match is in progress, you can view a demonstration with simulated data.
+    #             </p>
+    #         </div>
+    #         """,
+    #         unsafe_allow_html=True
+    #     )
     
     return selected_team, opponent_team

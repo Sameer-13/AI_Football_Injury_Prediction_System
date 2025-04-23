@@ -69,19 +69,21 @@ def display_in_match_analysis(selected_team, opponent_team):
             st.warning("No live match data available. Try refreshing the data.")
     
     else:
-        st.warning(
-            f"""
-            No live match is currently in progress for {selected_team}.
+        # st.warning(
+        #     f"""
+        #     No live match is currently in progress for {selected_team}.
             
-            The in-match analysis is only available during live matches. Please check back during the team's next match,
-            or switch to Pre-Match Analysis mode to view injury predictions for the upcoming matches.
-            """
-        )
+        #     The in-match analysis is only available during live matches. Please check back during the team's next match,
+        #     or switch to Pre-Match Analysis mode to view injury predictions for the upcoming matches.
+        #     """
+        # )
         
-        # Mock data for demonstration
-        if st.checkbox("Show demonstration with mock data", value=False):
-            st.info("This is demonstration data and does not represent a real match.")
+        # # Mock data for demonstration
+        # if st.checkbox("Show demonstration with mock data", value=False):
+        #     st.info("This is demonstration data and does not represent a real match.")
             
-            # Create mock live match data
-            mock_data = create_mock_live_data()
-            display_live_match_visualization(mock_data)
+            # # Create mock live match data
+            # mock_data = create_mock_live_data()
+            # display_live_match_visualization(mock_data)
+        mock_data = create_mock_live_data()
+        display_live_match_visualization(mock_data)
