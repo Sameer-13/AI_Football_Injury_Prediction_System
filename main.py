@@ -1,6 +1,7 @@
 import streamlit as st
 import os
 from PIL import Image
+import matplotlib.pyplot as plt
 
 st.set_page_config(
     page_title="InjurySense.AI",
@@ -10,7 +11,7 @@ st.set_page_config(
 )
 
 from components.sidebar import display_team_selector
-from components.table import display_player_table
+from components.table import display_player_table, plot_risk_dots_with_ci
 from components.metric_plane import display_risk_summary
 from components.player_cards import display_player_cards
 from components.risk_charts import display_risk_charts
@@ -108,7 +109,7 @@ if st.session_state.get("analysis_mode", "Pre-Match Analysis") == "Pre-Match Ana
     
     # Display player table with injury predictions
     st.markdown(get_section_header("Player Injury Risk Assessment"), unsafe_allow_html=True)
-    player_display_df = display_player_table(player_df)
+    plot_risk_dots_with_ci(player_df)
 
 else:
     # In-match mode
