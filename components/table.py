@@ -75,6 +75,37 @@ def display_player_table(player_df):
         ])
     )
 
+
+    def plot_risk_dots_with_ci(df):
+        df_sorted = df.sort_values("inj_probability", ascending=False).reset_index(drop=True)
+
+        fig, ax = plt.subplots(figsize=(10, 8))
+        y_positions = range(len(df_sorted))
+        
+        # Plot confidence intervals as horizontal lines
+        ax.hlines(y=y_positions, xmin=df_sorted["ci_lower_95"], xmax=df_sorted["ci_upper_95"],
+                color="#888", alpha=0.7, linewidth=2)
+
+        # Plot actual points
+        colors = ["#EF4444" if p > 0.5 else "#10B981" for p in df_sorted["inj_probability"]]  # Tailwind red/green
+        ax.scatter(df_sorted["inj_probability"], y_positions, color=colors, s=100, zorder=3)
+
+        # Formatting
+        ax.set_yticks(y_positions)
+        ax.set_yticklabels(df_sorted["player_name"])
+        ax.set_xlabel("Injury Probability")
+        ax.set_title("Pre-match Injury Risk per Player (with Confidence Intervals)")
+        ax.invert_yaxis()
+        ax.grid(True, axis='x', linestyle='--', alpha=0.3)
+        ax.set_facecolor("#111827")  # Dark background
+        fig.patch.set_facecolor('#111827')
+        ax.tick_params(colors='white')
+        ax.xaxis.label.set_color('white')
+        ax.yaxis.label.set_color('white')
+        ax.title.set_color('white')
+
+        st.pyplot(fig)
+
     # Display the styled table
     st.dataframe(styled_df, use_container_width=True, height=400)
 
