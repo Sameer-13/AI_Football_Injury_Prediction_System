@@ -13,7 +13,7 @@ def load_data():
     try:
         # Load the dataset
         # df = pd.read_csv(DATA_PATH)
-        df = pd.read_csv(r"C:\Users\smyra\Python Development\AI_Football_Injury_Prevention\data\pre_match_data\risk_Ohod_vs_Al_Khaleej_Saihat.csv")
+        df = pd.read_csv(r"data\pre_match_data\risk_Ohod_vs_Al_Khaleej_Saihat.csv")
         
         # # Convert position codes to names
         # if 'prev_games_position' in df.columns:
