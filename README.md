@@ -59,7 +59,7 @@ The system is built on a three-layer architecture:
    - Storage of pre-computed models and inference results
 
 2. **Model Layer**:
-   - Pre-match XGBoost classification model (F1 score: 0.80)
+   - Pre-match XGBoost classification model (Accuracy score: 0.92)
    - In-match streaming prediction pipeline
    - Feature importance analysis for explainability
 
