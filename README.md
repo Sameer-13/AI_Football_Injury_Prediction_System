@@ -185,9 +185,8 @@ The core predictive engine uses **XGBoost**, optimized for injury prediction:
    - Group-based splitting by player_id to ensure no player appears in both train/test sets
 
 3. **Evaluation Metrics**:
-   - Overall F1 Score: 0.80
-   - Accuracy: 0.85
-   - Significant improvement over baseline (0.41 F1 / 0.69 accuracy)
+   - Accuracy: 0.92
+   - Significant improvement over baseline (0.56 accuracy)
 
 4. **Key Performance Insights**:
    - Most predictive features:
@@ -246,10 +245,8 @@ The core predictive engine uses **XGBoost**, optimized for injury prediction:
 
 The model achieves strong predictive performance:
 
-- **F1 Score (macro)**: 0.80 
-- **Accuracy**: 0.85
-- **Baseline F1**: 0.41
-- **Baseline Accuracy**: 0.69
+- **Accuracy**: 0.92
+- **Baseline Accuracy**: 0.56
 
 ### Model Limitations:
 - Performance varies by injury type
