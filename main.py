@@ -1,4 +1,11 @@
 import streamlit as st
+# Page configuration
+st.set_page_config(
+    page_title="InjurySense.AI",
+    page_icon="⚽",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 import os
 from PIL import Image
 import matplotlib.pyplot as plt

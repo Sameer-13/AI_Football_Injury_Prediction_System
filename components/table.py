@@ -117,7 +117,7 @@ def display_player_table(player_df):
     with col1:
         st.markdown(
             """
-            <div style="background-color: #2C2F44; border-radius: 10px; padding: 1rem; text-align: center;">
+            <div style= border-radius: 10px; padding: 1rem; text-align: center;">
                 <span style="background-color: rgba(231, 76, 60, 0.9); color: white; font-weight: bold; border-radius: 5px; padding: 0.3rem 0.6rem;">High Risk</span>
                 <span style="margin-left: 0.5rem; color: #b0b0b0;">Players requiring special attention</span>
             </div>
@@ -128,7 +128,7 @@ def display_player_table(player_df):
     with col2:
         st.markdown(
             """
-            <div style="background-color: #2C2F44; border-radius: 10px; padding: 1rem; text-align: center;">
+            <div style= border-radius: 10px; padding: 1rem; text-align: center; margin: 100rem;">
                 <span style="background-color: rgba(93, 184, 92, 0.9); color: white; font-weight: bold; border-radius: 5px; padding: 0.3rem 0.6rem;">Low Risk</span>
                 <span style="margin-left: 0.5rem; color: #b0b0b0;">Players with normal injury risk</span>
             </div>
@@ -139,7 +139,7 @@ def display_player_table(player_df):
     with col3:
         st.markdown(
             """
-            <div style="background-color: #2C2F44; border-radius: 10px; padding: 1rem; text-align: center;">
+            <div style= border-radius: 10px; padding: 1rem; text-align: center;">
                 <button style="background-color: #5762D5; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-weight: 600;">
                     <span style="margin-right: 0.5rem;">📊</span> Export Data
                 </button>
