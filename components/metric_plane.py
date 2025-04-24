@@ -8,9 +8,8 @@ def display_risk_summary(player_display_df):
         player_display_df: Processed player display DataFrame
     """
     # Calculate risk counts
-    risk_count = player_display_df['Injury Prediction'].value_counts()
-    high_risk = risk_count.get(1, 0)
-    low_risk = risk_count.get(0, 0)
+    high_risk = player_display_df[player_display_df['inj_probability'] > 0.5].shape[0]
+    low_risk = player_display_df[player_display_df['inj_probability'] <= 0.5].shape[0]
     
     # Calculate percentages
     total_players = len(player_display_df)
@@ -53,6 +52,7 @@ def display_risk_summary(player_display_df):
         )
     
     # Add overall team risk assessment
+    print("Total players",total_players)
     overall_risk = "High" if high_risk/total_players > 0.3 else "Moderate" if high_risk/total_players > 0.1 else "Low"
     risk_color = "#E74C3C" if overall_risk == "High" else "#F1C40F" if overall_risk == "Moderate" else "#5DB85C"
     

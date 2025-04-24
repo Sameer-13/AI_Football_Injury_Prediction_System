@@ -17,8 +17,7 @@ def get_player_df(team_players):
     player_display_df = player_display_df.rename(columns=COLUMN_RENAME_MAP)
 
     # Add readable risk label
-    player_display_df['Injury Risk'] = player_display_df['Injury Prediction'].apply(
-        lambda x: 'High Risk' if x == 1 else 'Low Risk'
-    )
+    player_display_df['Injury Risk'] = player_display_df['inj_probability'].apply(
+        lambda x: 'High Risk' if x > 0.5 else 'Low Risk')
     
     return player_display_df

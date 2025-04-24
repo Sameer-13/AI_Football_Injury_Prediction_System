@@ -21,6 +21,9 @@ def display_risk_charts(player_df):
     
     # Create a pivot table for easier plotting
     pivot_df = position_risk.pivot(index='Position', columns='Injury Risk', values='Count').fillna(0)
+    print("This is the pivot df")
+    print(pivot_df)
+    
     
     # Ensure all columns exist
     if 'High Risk' not in pivot_df.columns:
@@ -158,12 +161,11 @@ def display_risk_charts(player_df):
                 """, unsafe_allow_html=True)
             
             # Display donut chart
-            st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
+            st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False},key=f"risk_chart_{position}")
     
     # 3. Find and display highest risk position
     highest_risk_position = pivot_df.sort_values('High Risk %', ascending=False).index[0]
     highest_risk_pct = pivot_df.loc[highest_risk_position, 'High Risk %']
-    
     st.markdown(
         f"""
         <div style="text-align: center; margin-top: 10px;">
