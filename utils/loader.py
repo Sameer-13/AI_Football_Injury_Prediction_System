@@ -3,7 +3,7 @@ import pandas as pd
 from utils.config import DATA_PATH, POSITION_MAP, TEAMS_PATH
 
 @st.cache_data
-def load_data():
+def load_data(path):
     """
     Load and preprocess data from CSV file
     
@@ -13,7 +13,7 @@ def load_data():
     try:
         # Load the dataset
         # df = pd.read_csv(DATA_PATH)
-        df = pd.read_csv(r"data\pre_match_data\risk_Ohod_vs_Al_Khaleej_Saihat.csv")
+        df = pd.read_csv(path)
         
         # # Convert position codes to names
         # if 'prev_games_position' in df.columns:

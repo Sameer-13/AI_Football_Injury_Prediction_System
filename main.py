@@ -73,7 +73,11 @@ if st.session_state.get("analysis_mode", "Pre-Match Analysis") == "Pre-Match Ana
     st.markdown(get_gradient_header("Pre-Match Player Injury Prediction Dashboard"), unsafe_allow_html=True)
     
     # Load pre-match data
-    players_df = load_data()
+    if opponent_team == "Al Khaleej Saihat" or selected_team == "Ohod":
+        players_df = load_data("data/pre_match_data/risk_Ohod_vs_Al_Khaleej_Saihat.csv")
+    else : 
+        players_df = load_data("data/pre_match_data/risk_Barcelona_vs_Celta_Vigo.csv")
+
     
     # Team header with gradient background
     st.markdown(get_section_header(f"Team: {selected_team} vs {opponent_team}"), unsafe_allow_html=True)
